@@ -9,5 +9,7 @@ namespace mobil
     abstract class Alkalmazas
     {
         public abstract void Input(char c);
+
+        public abstract void Megnyit();
     }
 }
