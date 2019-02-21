@@ -39,41 +39,44 @@ namespace mobil
                     
 
                 }
+            } else
+             {
+                if (alkalmazasIndex == 0)
+                {
+                    Program.Torol();
+                    Program.Kozepre(0, "Telefonkönyv" + " <");
+                    Program.Kozepre(1, "Hívás kezdeményezése");
+                    Program.Kozepre(2, "Jegyzettömb");
+                }
+
+
+                if (alkalmazasIndex == 1)
+                {
+                    Program.Torol();
+                    Program.Kozepre(0, "Telefonkönyv");
+                    Program.Kozepre(1, "Hívás kezdeményezése" + " <");
+                    Program.Kozepre(2, "Jegyzettömb");
+                }
+
+                if (alkalmazasIndex == 2)
+                {
+                    Program.Torol();
+                    Program.Kozepre(0, "Telefonkönyv");
+                    Program.Kozepre(1, "Hívás kezdeményezése");
+                    Program.Kozepre(2, "Jegyzettömb" + " <");
+                }
+
+                if (alkalmazasIndex > 3)
+                {
+                    alkalmazasIndex = 3;
+                }
+                if (alkalmazasIndex < 0)
+                {
+                    alkalmazasIndex = 0;
+                }
+
             }
 
-            if(alkalmazasIndex==0)
-            {
-                Program.Torol();
-                Program.Kozepre(0, "Telefonköny" + " <");
-                Program.Kozepre(1, "Hívás kezdeményezése");
-                Program.Kozepre(2, "Jegyzettomb");
-            }
-
-
-            if(alkalmazasIndex==1)
-            {
-                Program.Torol();
-                Program.Kozepre(0, "Telefonköny");
-                Program.Kozepre(1, "Hívás kezdeményezése" + " <");
-                Program.Kozepre(2, "Jegyzettomb");
-            }
-
-            if(alkalmazasIndex==2)
-            {
-                Program.Torol();
-                Program.Kozepre(0, "Telefonköny");
-                Program.Kozepre(1, "Hívás kezdeményezése");
-                Program.Kozepre(2, "Jegyzettomb" + " <");
-            }
-
-            if(alkalmazasIndex>3)
-            {
-                alkalmazasIndex = 3;
-            }
-            if(alkalmazasIndex<0)
-            {
-                alkalmazasIndex = 0;
-            }
 
 
         }
