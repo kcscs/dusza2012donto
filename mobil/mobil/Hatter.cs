@@ -46,7 +46,7 @@ namespace mobil
                     if (k.Key == elozoGomb) {
                         if (DateTime.Now - elozoIdo < maxDelay) {
                             Program.aktivAlkalmazas?.Input(torolChar);
-                            Program.aktivAlkalmazas?.Input(kovChar(k.KeyChar));
+                            Program.aktivAlkalmazas?.Input(getChar(k.Key, elozoDb));
                             elozoDb++;
                         } else {
                             Program.aktivAlkalmazas?.Input(k.KeyChar);
