@@ -18,7 +18,7 @@ namespace mobil
         //static extern void OutputDebugString(string lpOutputString);    
         static DateTime utolsoFrissites;
         static char[,] puffer = new char[20, 30];
-
+        public static Menu menu = new Menu();
         public static Alkalmazas aktivAlkalmazas = null;
         static void Main(string[] args) {
             utolsoFrissites = DateTime.Now;
@@ -34,6 +34,9 @@ namespace mobil
             Kozepre(10, "KOZEPRE");
             Kozepre(11, "KOZEPERIGAZITAS");
             Torol();
+
+           
+            menu.Megnyit();
             
 
             while(true)
