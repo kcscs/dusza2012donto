@@ -14,23 +14,17 @@ namespace mobil
         public override void Input(char c)
         {
 
-            if (c == 'T')
-            {
-                alkalmazasIndex++;
-
-            }
-            if (c == '5')
-            {
-                alkalmazasIndex--;
-            }
+           
+            
             if (c == '4')
             {
                  switch(alkalmazasIndex)
                 {
-                    /*case 0:
-                        telefonkonyv telefonkonyv = new telefonkonyv();
+                    case 0:
+                        Telefonkonyv telefonkonyv = new Telefonkonyv();
                         Program.aktivAlkalmazas = telefonkonyv;
-                        break;*/
+                        telefonkonyv.Megnyit();
+                        break;
                     case 2:
                         Jegyzettomb jegyzettomb = new Jegyzettomb();
                         Program.aktivAlkalmazas = jegyzettomb;
@@ -41,6 +35,17 @@ namespace mobil
                 }
             } else
              {
+
+                if (c == '5')
+                {
+                    alkalmazasIndex--;
+                }
+
+                if (c == 'T')
+                {
+                    alkalmazasIndex++;
+
+                }
                 if (alkalmazasIndex == 0)
                 {
                     Program.Torol();
@@ -66,9 +71,9 @@ namespace mobil
                     Program.Kozepre(2, "Jegyzettömb" + " <");
                 }
 
-                if (alkalmazasIndex > 3)
+                if (alkalmazasIndex >= 3)
                 {
-                    alkalmazasIndex = 3;
+                    alkalmazasIndex = 2;
                 }
                 if (alkalmazasIndex < 0)
                 {
