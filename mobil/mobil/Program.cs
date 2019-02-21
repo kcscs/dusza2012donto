@@ -29,13 +29,7 @@ namespace mobil
             Console.CursorVisible = false;
             Console.CursorTop = 20;
 
-            Write(0, 0, "ABCDEF");
-            Kozepre(9, "K");
-            Kozepre(10, "KOZEPRE");
-            Kozepre(11, "KOZEPERIGAZITAS");
-            Torol();
 
-           
             menu.Megnyit();
             
 

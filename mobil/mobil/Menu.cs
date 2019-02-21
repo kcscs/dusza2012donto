@@ -14,29 +14,65 @@ namespace mobil
         public override void Input(char c)
         {
 
-            if (c == 'T' && alkalmazasIndex < 2)
+            if (c == 'T')
             {
                 alkalmazasIndex++;
 
             }
-            if (c == '5' && alkalmazasIndex < 0)
+            if (c == '5')
             {
                 alkalmazasIndex--;
             }
             if (c == '4')
             {
-                kivalaszottIndex = alkalmazasIndex;
+                 switch(alkalmazasIndex)
+                {
+                    /*case 0:
+                        telefonkonyv telefonkonyv = new telefonkonyv();
+                        Program.aktivAlkalmazas = telefonkonyv;
+                        break;*/
+                    case 2:
+                        Jegyzettomb jegyzettomb = new Jegyzettomb();
+                        Program.aktivAlkalmazas = jegyzettomb;
+                        jegyzettomb.Megnyit();
+                        break;
+                    
+
+                }
             }
 
             if(alkalmazasIndex==0)
             {
                 Program.Torol();
                 Program.Kozepre(0, "Telefonköny" + " <");
+                Program.Kozepre(1, "Hívás kezdeményezése");
+                Program.Kozepre(2, "Jegyzettomb");
             }
+
+
             if(alkalmazasIndex==1)
             {
                 Program.Torol();
+                Program.Kozepre(0, "Telefonköny");
                 Program.Kozepre(1, "Hívás kezdeményezése" + " <");
+                Program.Kozepre(2, "Jegyzettomb");
+            }
+
+            if(alkalmazasIndex==2)
+            {
+                Program.Torol();
+                Program.Kozepre(0, "Telefonköny");
+                Program.Kozepre(1, "Hívás kezdeményezése");
+                Program.Kozepre(2, "Jegyzettomb" + " <");
+            }
+
+            if(alkalmazasIndex>3)
+            {
+                alkalmazasIndex = 3;
+            }
+            if(alkalmazasIndex<0)
+            {
+                alkalmazasIndex = 0;
             }
 
 
@@ -49,6 +85,7 @@ namespace mobil
             Program.Torol();
             Program.Kozepre(0, "Telefonköny");
             Program.Kozepre(1, "Hívás kezdeményezése");
+            Program.Kozepre(2, "Jegyzettömb");
         }
     }
 }
