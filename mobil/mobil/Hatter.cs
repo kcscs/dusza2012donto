@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Threading;
 
 namespace mobil
 {
-    class Program
+    static class Hatter
     {
-        static void Main(string[] args) {
-            Thread t = new Thread(Hatter.Futtat);
-            t.Start();
+        public static void Futtat() {
+
         }
     }
 }
