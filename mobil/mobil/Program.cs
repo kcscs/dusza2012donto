@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Runtime.InteropServices;
 
 namespace mobil
 {
     class Program
     {
-        const double kepfrissites = 1.0 / 30;
-
+        const double kepfrissites = 1.0 / 1;
+        //[DllImport("kernel32.dll")]
+        //static extern void OutputDebugString(string lpOutputString);    
         static DateTime utolsoFrissites;
         static char[,] puffer = new char[30, 20]; 
         static void Main(string[] args) {
@@ -43,6 +45,7 @@ namespace mobil
                 {
                     Console.Write(puffer[i,j]);
                 }
+                //OutputDebugString("\n");
                 Console.WriteLine();
             }
             
