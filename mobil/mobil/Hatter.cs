@@ -9,7 +9,10 @@ namespace mobil
     static class Hatter
     {
         public static void Futtat() {
-            
+            while (true) {
+                ConsoleKeyInfo k = Console.ReadKey();
+                
+            }
         }
     }
 }
