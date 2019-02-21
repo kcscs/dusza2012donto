@@ -5,12 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace mobil
 {
     class Program
     {
-        const double kepfrissites = 1.0 / 1;
+
+        static bool frissultE;
+        const double kepfrissites = 1.0 / 60;
         //[DllImport("kernel32.dll")]
         //static extern void OutputDebugString(string lpOutputString);    
         static DateTime utolsoFrissites;
@@ -22,13 +25,13 @@ namespace mobil
 
             Console.SetWindowSize(30, 21);
             Console.CursorVisible = false;
-            Console.CursorTop = 21;
+            Console.CursorTop = 20;
 
             Write(0, 0, "ABCDEF");
 
             while(true)
             {
-                if((DateTime.Now - utolsoFrissites).TotalSeconds>=kepfrissites)
+                if((DateTime.Now - utolsoFrissites).TotalSeconds>=kepfrissites && frissultE == true)
                 {
                     Rajzol();
                 }
@@ -37,26 +40,32 @@ namespace mobil
 
         static void Rajzol()
         {
+            frissultE = false;
             utolsoFrissites = DateTime.Now;
             Console.Clear();
-            for(int i=0;i<30;i++)
+            for(int i=0;i<20;i++)
             {
-                for(int j=0;j<20;j++)
+                for(int j=0;j<30;j++)
                 {
-                    Console.Write(puffer[i,j]);
+                    Console.Write(puffer[j,i]);
                 }
                 //OutputDebugString("\n");
-                Console.WriteLine();
+                if(i<29)
+                {
+                    Console.WriteLine();
+                }
             }
             
         }
 
         public static void Write(int x, int y, string szoveg)
         {
+            frissultE = true;
             for(int i=0;i<szoveg.Length;i++)
             {
-                puffer[x, y + i] = szoveg[i];
+                puffer[x + i, y] = szoveg[i];
             }
+            
         }
     }
 }
