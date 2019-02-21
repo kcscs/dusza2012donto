@@ -9,7 +9,7 @@ namespace mobil
     static class Hatter
     {
         public static void Futtat() {
-
+            
         }
     }
 }

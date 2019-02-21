@@ -260,10 +260,3 @@ paket-files/
 __pycache__/
 *.pyc
 
-*.lock
-mobil/mobil.sln
-mobil/.vs/**
-mobil/mobil/**
-!mobil/mobil/*.cs
-/*.bat
-/*.txt
