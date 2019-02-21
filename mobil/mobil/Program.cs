@@ -17,7 +17,9 @@ namespace mobil
         //[DllImport("kernel32.dll")]
         //static extern void OutputDebugString(string lpOutputString);    
         static DateTime utolsoFrissites;
-        static char[,] puffer = new char[30, 20]; 
+        static char[,] puffer = new char[20, 30];
+
+        public static Alkalmazas aktivAlkalmazas = null;
         static void Main(string[] args) {
             utolsoFrissites = DateTime.Now;
             Thread t = new Thread(Hatter.Futtat);
@@ -28,6 +30,11 @@ namespace mobil
             Console.CursorTop = 20;
 
             Write(0, 0, "ABCDEF");
+            Kozepre(9, "K");
+            Kozepre(10, "KOZEPRE");
+            Kozepre(11, "KOZEPERIGAZITAS");
+            Torol();
+            
 
             while(true)
             {
@@ -38,6 +45,9 @@ namespace mobil
             }
         }
 
+        
+
+        
         static void Rajzol()
         {
             frissultE = false;
@@ -47,7 +57,7 @@ namespace mobil
             {
                 for(int j=0;j<30;j++)
                 {
-                    Console.Write(puffer[j,i]);
+                    Console.Write(puffer[i,j]);
                 }
                 //OutputDebugString("\n");
                 if(i<29)
@@ -63,9 +73,32 @@ namespace mobil
             frissultE = true;
             for(int i=0;i<szoveg.Length;i++)
             {
-                puffer[x + i, y] = szoveg[i];
+                puffer[y , x+i] = szoveg[i];
             }
             
         }
+
+        public static void Kozepre(int sor, string szoveg)
+        {
+            frissultE = true;
+            for(int i=0;i<szoveg.Length;i++)
+            {   
+                puffer[sor, (30 / 2) - (szoveg.Length / 2) + i - 1] = szoveg[i]; 
+            }
+        }
+
+        public static void Torol()
+        {
+            frissultE = true;
+            for(int i=0;i<20;i++)
+            {
+                for(int j=0;j<30;j++)
+                {
+                    puffer[i, j] = ' ';
+                }
+            }
+        }
+
+
     }
 }
